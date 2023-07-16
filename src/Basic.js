@@ -21,23 +21,24 @@ const Basic = () => {
         <div className="title-underline"></div>
       </div>
       <div className="products">
-        {products.map((product) => {
-          const {
-            id,
-            image: { url },
-            price,
-            name,
-          } = product;
-          return (
-            <article className="product" key={id}>
-              <img src={url} alt={name} />
-              <div className="info">
-                <h5>{name}</h5>
-                <h5 className="price">${price}</h5>
-              </div>
-            </article>
-          );
-        })}
+        {products &&
+          products.map((product) => {
+            const {
+              id,
+              image: { url },
+              price,
+              name,
+            } = product;
+            return (
+              <article className="product" key={id}>
+                <img src={url} alt={name} />
+                <div className="info">
+                  <h5>{name}</h5>
+                  <h5 className="price">${price}</h5>
+                </div>
+              </article>
+            );
+          })}
       </div>
     </section>
   );
