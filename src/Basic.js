@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-const url = "https:/serverless-application.netlify.app/api/2-basic-api";
+
+const url = "https://serverless-application.netlify.app/api/2-basic-api";
 const Basic = () => {
   const [products, setProducts] = useState([]);
 
@@ -8,12 +9,15 @@ const Basic = () => {
     try {
       const { data } = await axios.get(url);
       setProducts(data);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <section className="section section-center">
       <div className="title">
