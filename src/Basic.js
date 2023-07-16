@@ -21,6 +21,7 @@ const Basic = () => {
         <div className="title-underline"></div>
       </div>
       <div className="products">
+        {console.log(products)}
         {products &&
           products.map((product) => {
             const {
